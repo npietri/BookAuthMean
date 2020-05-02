@@ -23,31 +23,31 @@ const UserSchema = mongoose.Schema({
 const User = module.exports = mongoose.model("User", UserSchema);
 
 //enable to call it by outside
-module.exports.getUserById = function (id, callbacks) {
-    User.findById(id, callbacks);
+module.exports.getUserById = function (id, callback) {
+    User.findById(id, callback);
 }
-module.exports.getUserByUsername = function (username, callbacks) {
+module.exports.getUserByUsername = function (username, callback) {
     const query = { username: username };
-    User.findOne(query, callbacks);
+    User.findOne(query, callback);
 }
 
-module.exports.addUser = function (newUser, callbacks) {
+module.exports.addUser = function (newUser, callback) {
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) {
                 throw err;
             }
             newUser.password = hash;
-            newUser.save(callbacks);
+            newUser.save(callback);
         });
     });
 }
 
-module.exports.comparePassword = function (candidatePassword, hash, callbacks) {
+module.exports.comparePassword = function (candidatePassword, hash, callback) {
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
         if (err) {
             throw err;
         }
-        callbacks(null, isMatch);
+        callback(null, isMatch);
     });
 }
