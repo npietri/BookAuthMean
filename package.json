@@ -1,0 +1,22 @@
+{
+  "name": "nico",
+  "version": "1.0.0",
+  "description": "MEAN stack auth app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "@angular/cli": "^9.1.4",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "bootstrap": "^4.1.2",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  }
+}
