@@ -10,9 +10,9 @@ const config = require('./config/database');
 // Connect To Database
 mongoose.connect(config.database, {
   useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
+  //useCreateIndex: true,
+  //useFindAndModify: false,
+  //useUnifiedTopology: true
 });
 
 // On Connection
